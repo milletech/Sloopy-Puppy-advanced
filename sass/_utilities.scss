@@ -1,0 +1,22 @@
+.u-center-text {
+    text-align: center;
+}
+
+.u-margin-bottom-big {
+    margin-bottom: 6rem;
+}
+
+.u-margin-bottom-small {
+    margin-bottom: 1.7rem;
+}
+
+.col-heading {
+    font-size: 2rem;
+    text-transform: uppercase;
+    display: inline-block;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    background-image: linear-gradient(to right, $main-color, $accent-color);
+    -webkit-background-clip: text;
+    color: transparent;
+}

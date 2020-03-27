@@ -1,0 +1,157 @@
+    // ---=========THE TOUR SECTION==========------
+    .section-tours {
+        @include responsive(tab-port) {
+            height: 270%;
+            padding: 3rem 10rem;
+        }
+        @include responsive(phone) {
+            height: 190%;
+            padding: 3rem 5rem;
+        }
+        padding: 3rem 0;
+        height: 100%;
+        margin: 10rem 0;
+        .row {
+            margin: 0 auto;
+            padding: 0 10rem;
+            @include responsive(phone) {
+                padding: 0 4rem;
+            }
+        }
+        .discover {
+            &__btn {
+                text-decoration: none;
+                background-image: linear-gradient($main-color)
+            }
+        }
+        .card {
+            @include responsive(phone) {
+                //width: 90%;
+            }
+            perspective: 150rem;
+            -moz-perspective: 150rem;
+            position: relative;
+            height: 40rem;
+            width: 100%;
+            &__side {
+                background-color: lightblue;
+                transition: all .8s ease;
+                height: 40rem;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                backface-visibility: hidden;
+                border-radius: 5px;
+                overflow: hidden;
+                box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .15);
+                &--front {
+                    background-color: $secondary-color;
+                }
+                &--back {
+                    transform: rotateY(180deg);
+                    &--1 {
+                        background-image: linear-gradient(to right bottom, $main-color-light, $main-color);
+                    }
+                    &--2 {
+                        background-image: linear-gradient(to right bottom, $accent-color, $accent-color-full);
+                    }
+                    &--3 {
+                        background-image: linear-gradient(to right bottom, $light-green, $green);
+                    }
+                }
+            }
+            &:hover {
+                cursor: pointer;
+            }
+            &:hover &__side--front {
+                transform: rotateY(180deg);
+            }
+            &:hover &__side--back {
+                transform: rotateY(0);
+            }
+            &__picture {
+                background-size: cover;
+                height: 19rem;
+                background-blend-mode: screen;
+                -webkt-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+                clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+                &--1 {
+                    background-image: linear-gradient(to right bottom, $main-color-light, $main-color), url("../images/puppies/2.jpg");
+                }
+                &--2 {
+                    background-image: linear-gradient(to right bottom, $accent-color, $accent-color-full), url("../images/puppies/akc-dog-grooming-at-home-729.jpg");
+                }
+                &--3 {
+                    background-image: linear-gradient(to right bottom, $light-green, $green), url("../images/puppies/5.jpg");
+                }
+            }
+            &__heading {
+                font-size: 2.3rem;
+                font-weight: 300;
+                text-transform: uppercase;
+                position: absolute;
+                top: 12rem;
+                right: 2rem;
+                text-align: right;
+                color: $secondary-color;
+                letter-spacing: 2px;
+                width: 65%;
+            }
+            &__heading-span {
+                padding: 0.4rem 0.8rem;
+                -webkit-box-decoration-break: clone;
+                &--1 {
+                    background-image: linear-gradient(to right bottom, $main-color-light, $main-color)
+                }
+                &--2 {
+                    background-image: linear-gradient(to right bottom, $accent-color, $accent-color-full)
+                }
+                &--3 {
+                    background-image: linear-gradient(to right bottom, $light-green, $green)
+                }
+            }
+            &__details {
+                padding: 1rem 2rem;
+                ul {
+                    list-style-type: none;
+                    width: 80%;
+                    margin: 0 auto;
+                    li {
+                        text-align: center;
+                        font-size: 1.4rem;
+                        padding: 1rem;
+                        &:not(:last-of-type) {
+                            border-bottom: solid 0.5px $text-color;
+                        }
+                    }
+                }
+            }
+            // The back part of the card
+            &__cta {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+            }
+            &__price-box {
+                text-align: center;
+                color: $secondary-color;
+                a {
+                    text-decoration: none;
+                    background-color: $secondary-color;
+                    color: $text-color;
+                }
+            }
+            &__price-only {
+                font-size: 1.6rem;
+                text-transform: uppercase;
+            }
+            &__price-value {
+                font-size: 4rem;
+                text-transform: uppercase;
+                text-decoration: none;
+            }
+        }
+    }

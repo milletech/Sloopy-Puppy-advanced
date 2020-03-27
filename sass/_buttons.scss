@@ -1,0 +1,62 @@
+.learn-more-btn {
+    &:link,
+    &:visited {
+        text-decoration: none;
+        color: $accent-color;
+        font-size: 1.4rem;
+        font-weight: bold;
+        display: inline-block;
+        border-bottom: solid 2px $accent-color;
+        margin-top: 10px;
+        padding: 2px;
+        transition: all 0.7s;
+        text-transform: uppercase;
+    }
+    &:hover {
+        background-color: $accent-color;
+        color: $secondary-color;
+        box-shadow: 0 0.6rem 1.5rem rgba(0, 0, 0, 0.2);
+        transform: translateY(-2px);
+    }
+}
+
+.submit-btn {
+    background-color: $accent-color;
+    border: none;
+    outline: none;
+    padding: 0.8rem 2rem;
+    font-family: inherit;
+    text-transform: uppercase;
+    border-radius: 20px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-top: 15px;
+    color: $secondary-color;
+    letter-spacing: 0.5px;
+    position: relative;
+    display: inline-block;
+    box-shadow: 0 0.6rem 1.5rem rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.5s;
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 0.9rem 1.9rem rgba(0, 0, 0, 0.4);
+        &::after {
+            transform: scaleX(1.6) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+    &::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 10rem;
+        transition: all 0.4s;
+        background-color: $accent-color;
+    }
+}

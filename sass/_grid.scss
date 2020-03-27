@@ -1,0 +1,23 @@
+//The grid system
+.row {
+    @include responsive(tab-port) {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        adding: 0 7rem;
+    }
+    @include responsive(phone) {
+        padding: 0 5rem;
+    }
+    display: grid;
+    padding: 0 10rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 50px;
+    &--abouts {
+        grid-column-gap: 30px;
+    }
+    .col-1-of-2 {
+        &--two {
+            display: grid;
+            padding: 1rem 5rem;
+        }
+    }
+}
